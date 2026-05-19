@@ -28,36 +28,42 @@
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh;
       padding: 0;
       margin: 0;
       background-color: hsl(30, 38%, 92%);
     }
     main {
-      width: 100%;
-      height: 100%;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    div {
-      width: 600px;
+    main > div {
+      width: min(100% - 2rem, 600px);
       background-color: white;
       display: flex;
       justify-content: center;
       border-radius: 10px;
       overflow: hidden;
     }
-    div div {
-      margin: 24px 32px;
+    div picture  {
+      flex: 1;
+      display: block;
+    }
+    main > div > div {
+      flex:1;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      gap:1.5rem;
+      padding: 2rem;
     }
 
     .main-image{
       display: block; 
-      height: 450px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
 
@@ -66,22 +72,22 @@
     div h1{
       margin: 0;
       font-family: "Fraunces";
+      font-size: 2rem;
       font-weight: 700;
-      line-height: 95%;
+      line-height: 1;
     }
     div p{
       margin: 0;
       font-family: "Montserrat";
+      font-size: 0.875rem;
       font-weight: 500;
-      font-size: small;
       color: hsl(228, 12%, 48%);
-      line-height: 150%;
-      letter-spacing: 5%;
+      line-height: 1.6;
     }
     button {
-      border-width: 0px;
+      border: 0 ;
       border-radius: 8px;
-      height: 48px;
+      height: 3rem;
       background-color: hsl(158, 36%, 37%);
       color: white;
       display: flex;
@@ -89,7 +95,7 @@
       justify-content: center;
       gap: 12px;
       font-family: "Montserrat";
-      font-size: small;
+      font-size: 0.875rem;
       font-weight: 700;
     }
     button img {
@@ -99,9 +105,9 @@
 
     .div__product-name{
       color: hsl(228, 12%, 48%);
-      letter-spacing: 30%;
+      letter-spacing: 0.3em;
       font-family: "Montserrat";
-      font-size: small;
+      font-size: 0.75rem;
       font-weight: 500;
     }
     .div__discount-price {
@@ -114,7 +120,7 @@
       color: hsl(228, 12%, 48%);
       font-family: "Montserrat";
       font-size: small;
-      margin-inline-start: 24px;
+      margin-inline-start: 1.5rem;
       font-weight: 500;
       vertical-align: middle;
       text-decoration: line-through;
@@ -124,13 +130,11 @@
 
     @media(max-width:600px){
       div{
-        width: auto;
         flex-direction: column;
-        margin: 10px;
       }
       div div {
-        margin: 24px 32px;
-        gap: 24px;
+        gap:1rem;
+        padding: 1.5rem;
       }
 
       .main-image{
@@ -143,7 +147,7 @@
 </head>
 <body>
 
-  <main>
+  <main >
   <div>
 
     <picture>
